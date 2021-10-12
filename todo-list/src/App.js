@@ -1,14 +1,21 @@
-import React from 'react';
+import React,{useState} from 'react';
 import NavigationBar from './components/NavigationBar';
-import ToDoApp from "./components/ToDoApp"
+import ToDoList from "./components/ToDoList";
+import Form from "./components/Form";
 
+ 
 
 function App() {
-  return (
+  const [inputText, setInputText] =  useState(''); 
+  const [toDos, setToDos] = useState([]);
+  
+   return (
     <div className="App">
       <NavigationBar />
-      <ToDoApp />
-    </div>
+     
+      <Form toDos = {toDos} setToDos = {setToDos} inputText= {inputText} setInputText={setInputText} />
+     <ToDoList toDos ={toDos}/>
+     </div>
 
   );
 }
