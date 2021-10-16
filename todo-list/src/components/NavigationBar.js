@@ -24,11 +24,3 @@ import React from "react";
 
  export default NavigationBar;
  
-            
-/*draft code */ 
-            /*<nav>
-                <ul>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </nav>*/
