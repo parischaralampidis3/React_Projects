@@ -1,13 +1,15 @@
 import React from "react";
 
-function Form({ inputText, setInputText, toDos, setToDos }) {
+function Form({ inputText, setInputText, toDos, setToDos, setStatus }) {
     const inputTextHandler = (e) => {
-        console.log(e.target.value);
         setInputText(e.target.value);
     }
+    const handleSelectedToDos = (e) =>{
+        setStatus(e.target.value);
+    }
+
     const submitToDoHandler = (e) => {
         e.preventDefault();
-        console.log('button hit');
         setToDos(
             [
                 ...toDos,
@@ -34,10 +36,10 @@ function Form({ inputText, setInputText, toDos, setToDos }) {
                             </button>
                         </div>
                         <div className="select">
-                            <select name="todos" className="filter-todo">
+                            <select  onChange={handleSelectedToDos} name="todos" className="filter-todo">
                                 <option value="all">All</option>
                                 <option value="completed">Completed</option>
-                                <option value="uncomplete">Uncomplete</option>
+                                <option value="uncompleted">Uncomplete</option>
                             </select>
                         </div>
                     </div>
