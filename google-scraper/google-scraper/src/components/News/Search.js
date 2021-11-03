@@ -1,24 +1,38 @@
-import React from 'react';
+
+import React,{Component} from 'react';
 import "../Styles.css";
-function Search(){
-    function submitHandler (e){
+
+class Search extends Component{
+    state = {
+        text:''
+    }    
+    onSubmit = (e) =>{
         e.preventDefault();
-        console.log('submit button is works properly');
+        this.props.inputSearch(this.state.text);
+        this.setState({text:""});
 
     }
+     onChange = (e) =>{
+         this.setState({[e.target.name] : e.target.value})
+    }   
+  
+    render(){ 
+
     return(
         <div>
-            <div>
-                <h3>What do you want to search today?</h3>
-            </div>
-            <form onSubmit={submitHandler}>
+         
+            <form onSubmit={this.onSubmit}>
                 <label id="news"></label>
-                <input type="text" id="news" placeholder="add your keyword here.." /> 
+                <input type="text" name ="text" id="news" value ={this.state.text} placeholder="add your keyword here.." onChange = {this.onChange}/> 
                 <input type="submit" value="search" />
             </form>
            
         </div>
-    )
-}
+    ) 
+
+    }
+
+    }
+
 
 export default Search;
