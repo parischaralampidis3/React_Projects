@@ -6,7 +6,7 @@ function NewsItem({newsEl: {snippet,source,date,link,thumbnail,title}}){
      return(
          <div class="container">
            
-             <a href={link} target="_blank">
+             <a href={link} >
                  <h3 class="news-title">{title}</h3>
                  </a>
             <h1> </h1>

@@ -1,5 +1,7 @@
 
 import React,{Component} from 'react';
+import { withRouter } from 'react-router-dom'; // <--- import `withRouter`. We will use this in the bottom of our file.
+
 import "../Styles.css";
 
 class Search extends Component{
@@ -10,6 +12,8 @@ class Search extends Component{
         e.preventDefault();
         this.props.inputSearch(this.state.text);
         this.setState({text:""});
+
+           this.props.history.push('/news'); // <--- The page you want to redirect your user to
 
     }
      onChange = (e) =>{
@@ -35,4 +39,4 @@ class Search extends Component{
     }
 
 
-export default Search;
+export default withRouter(Search);

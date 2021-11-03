@@ -1,8 +1,6 @@
 import React, { useState, useEffect, Component } from 'react';
 import axios from "axios";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from './components/Navigation';
-import News from './components/News';
 import NewsList from './components/News/NewsList';
 import Search from './components/News/Search';
 import './App.css';
